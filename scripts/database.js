@@ -54,34 +54,6 @@ const database = {
             },
             {
                 id: 8,
-                name: "The Glasshouses",
-                address: "545 W 25th St, New York, NY 10001",
-                squareFootage: 13000,
-                cap: 300
-            },
-            {
-                id: 9,
-                name: "Brooklyn Winery",
-                address: "213 N 8th St, Brooklyn, NY 11211",
-                squareFootage: 8000,
-                cap: 200
-            },
-            {
-                id: 10,
-                name: "Manhattan Penthouse on Fifth Avenue",
-                address: "80 Fifth Ave, New York, NY 10011",
-                squareFootage: 6000,
-                cap: 250
-            },
-            {
-                id: 11,
-                name: "The Green Building",
-                address: "452 Union St, Brooklyn, NY 11231",
-                squareFootage: 6000,
-                cap: 250
-            },
-            {
-                id: 12,
                 name: "Cats Cradle",
                 address: "300 E Main St, Carrboro, NC 27510",
                 squareFootage: 5000,
@@ -233,11 +205,48 @@ const database = {
         ], 
         
         bookings: [
-                {
-                    id: 1,
-                    bandID: 1,
-                    venueID: 1,
-                    date: randomDate
-                }
-        ]
+            { id: 1, bandID: 6, venueID: 6, date: "2024-04-05" },
+            { id: 2, bandID: 13, venueID: 1, date: "2024-04-05" },
+            { id: 3, bandID: 3, venueID: 4, date: "2024-04-05" },
+            { id: 4, bandID: 8, venueID: 3, date: "2024-04-05" },
+            { id: 5, bandID: 2, venueID: 1, date: "2024-04-06" },
+            { id: 6, bandID: 16, venueID: 2, date: "2024-04-06" },
+            { id: 7, bandID: 10, venueID: 4, date: "2024-04-06" },
+            { id: 8, bandID: 18, venueID: 6, date: "2024-04-06" },
+            { id: 9, bandID: 10, venueID: 6, date: "2024-04-12" },
+            { id: 10, bandID: 6, venueID: 3, date: "2024-04-12" },
+            { id: 11, bandID: 10, venueID: 5, date: "2024-04-12" },
+            { id: 12, bandID: 2, venueID: 1, date: "2024-04-12" },
+            { id: 13, bandID: 6, venueID: 4, date: "2024-04-13" },
+            { id: 14, bandID: 9, venueID: 7, date: "2024-04-13" },
+            { id: 15, bandID: 17, venueID: 4, date: "2024-04-13" },
+            { id: 16, bandID: 7, venueID: 1, date: "2024-04-13" },
+            { id: 17, bandID: 14, venueID: 1, date: "2024-04-19" },
+            { id: 18, bandID: 19, venueID: 5, date: "2024-04-19" },
+            { id: 19, bandID: 1, venueID: 3, date: "2024-04-19" },
+            { id: 20, bandID: 17, venueID: 8, date: "2024-04-19" },
+            { id: 21, bandID: 14, venueID: 7, date: "2024-04-20" },
+            { id: 22, bandID: 13, venueID: 3, date: "2024-04-20" },
+            { id: 23, bandID: 3, venueID: 8, date: "2024-04-20" },
+            { id: 24, bandID: 15, venueID: 3, date: "2024-04-20" },
+            { id: 25, bandID: 12, venueID: 6, date: "2024-04-26" },
+            { id: 26, bandID: 10, venueID: 2, date: "2024-04-26" },
+            { id: 27, bandID: 5, venueID: 1, date: "2024-04-26" },
+            { id: 28, bandID: 14, venueID: 8, date: "2024-04-26" },
+            { id: 29, bandID: 20, venueID: 7, date: "2024-04-27" },
+            { id: 30, bandID: 5, venueID: 2, date: "2024-04-27" }
+                ]
+        
+}
+
+export const getVenues = () => {
+    return database.venues.map(venue => ({...venue}))
+}
+
+export const getBands = () => {
+    return database.bands.map(band => ({...band}))
+}
+
+export const getBookings = () => {
+    return database.bookings.map(booking => ({...booking}))
 }

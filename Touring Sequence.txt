@@ -1,0 +1,43 @@
+title Touring
+
+note over main: import bookings, bands, and venues display functions from respective modules
+note over bookings: import bookings, bands, and venues arrays from database
+note over bands: import bands array from database
+note over venues: import venues array from database
+main -> bookings: invoke displayBookings
+loop for each booking in bookings
+bookings->database: get bookings array
+database-->bookings: bookings array
+bookings->bookings: 
+note over bookings: invoke getBands with bookings and bands as arguments 
+bookings->database: get bands array
+database-->bookings: bands array
+loop
+bookings->bookings: for each band in bands, if bandID === bookings bandID\n return band 
+end
+note over bookings: save returned value as currentBand
+note over bookings: invoke getVenues with bookings and venues as arguments
+bookings->database: get venues array
+database-->bookings: venues array
+loop
+bookings->bookings: for each venue in venues, if venueID === bookings venueID\n return venue 
+end
+note over bookings: save returned value as currentVenue
+note over bookings: interpolate html string for bookings display
+end
+bookings -->main: return bookings html string 
+main ->bands: invoke displayBands
+loop
+bands->database: get bands array
+database-->bands: bands array
+bands->bands: for each band in bands, interpolate html string
+end
+bands-->main: return bands html string
+main ->venues: invoke displayVenues
+loop 
+venues->database: get venues array
+database-->venues: venues array
+venues->venues: for each venue in venues, interpolate html string
+end
+venues->main: return venues html string
+note over main: innerHTML variable value 
