@@ -15,11 +15,11 @@ const tourData = `
                 </section>
             </article>
             <article class="clients">
-                    <section class="clients_venues-list">
+                    <section class="clients-list">
                     <h2>Venues</h2>
                     ${displayVenues()}
                     </section>
-                    <section class="clients_bands-list">
+                    <section class="clients-list">
                     <h2>Bands</h2>
                     ${displayBands()}
                     </section>

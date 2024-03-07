@@ -1,6 +1,26 @@
 
+h1 {
+    text-align: center;
+}
+
+
+.bookings {
+    display: flex;
+    justify-content: center;
+}
+
 
 .clients {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.clients-list {
+    border: solid rebeccapurple 1px;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 15px;
+ 
 }

@@ -33,7 +33,7 @@ document.addEventListener(
                         bandNames.push(bandObj.bandName)
                     }
                 }
-            } window.alert(`${bandNames} are playing at ${itemClicked.dataset.name}`)
+            } window.alert(`${bandNames.join(', ')} are playing at ${itemClicked.dataset.name}`)
         }
     }
     

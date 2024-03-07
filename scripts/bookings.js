@@ -33,7 +33,7 @@ export const displayBookings = () => {
     for (const date of allBookings) {
         const bandPlaying = currentBand(allBands, date)
         const venue = currentVenue(allVenues, date)
-        bookingHTML += `<li>${bandPlaying.bandName} is playing ${venue.name} on ${date.date}</li>`
+        bookingHTML += `<li data-type="booking" data-bandid="${bandPlaying.id}" >${bandPlaying.bandName} is playing ${venue.name} on ${date.date}</li>`
     }
     bookingHTML += "</ul>"
     return bookingHTML
@@ -42,3 +42,17 @@ export const displayBookings = () => {
 
 
 //define an event listener that when a booking is clicked displays the band details in a window alert.
+
+document.addEventListener(
+    "click",
+    (clickEvent) => {
+        const itemClicked = clickEvent.target
+        if (itemClicked.dataset.type === "booking") {
+            for (const band of allBands) {
+                if (band.id === parseInt(itemClicked.dataset.bandid)) {
+                    window.alert(`${band.bandName}\n${band.numberOfMembers} band members\n${band.musicalGenre}\nFormed in ${band.yearFormed}`)
+                }
+            }
+        }
+    }
+)
